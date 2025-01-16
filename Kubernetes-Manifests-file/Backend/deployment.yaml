@@ -26,8 +26,7 @@ spec:
       containers:
       - name: api
         image: 407622020962.dkr.ecr.us-east-1.amazonaws.com/backend:4
-        imagePullSecrets:
-          - name: ecr-registry-secret
+        imagePullPolicy: Always
         env:
           - name: MONGO_CONN_STR
             value: mongodb://mongodb-svc:27017/todo?directConnection=true
